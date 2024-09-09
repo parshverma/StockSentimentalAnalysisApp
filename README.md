@@ -15,7 +15,13 @@ This Flask web application predicts stock movements based on technical indicator
 
 ## Usage
 
-1. **Install dependencies**:
+1. **Clone the repository**:
+   Clone the app's GitHub repository to your local machine:
+
+   ```bash
+   git clone https://github.com/parshverma/StockSentimentalAnalysisApp.git
+   
+2. **Install dependencies**:
    Make sure you have Python and the required packages installed. You can install the necessary dependencies by running:
 
    ```bash
@@ -41,15 +47,4 @@ This Flask web application predicts stock movements based on technical indicator
 - **VADER**: Sentiment analysis tool from the NLTK package.
 - **Joblib**: Used to load the pre-trained machine learning models.
 - **Yahoo Finance**: For fetching historical stock data.
-
-### Folder Descriptions
-
-- **models/**: Contains the saved machine learning models (Random Forest models and scalers).
-- **static/**: Contains static files like CSS for styling.
-- **templates/**: HTML templates for rendering pages.
-- **vader_lexicon/**: Contains the VADER lexicon used for sentiment analysis.
-
-## License
-
-This project is for educational purposes only and is not intended for financial decision-making.
 
