@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Prediction App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Stock Sentiment App</h1>
+        <form method="POST">
+            <label for="ticker">Enter Ticker (e.g., MSFT):</label>
+            <input type="text" id="ticker" name="ticker" required>
+
+            <label for="headline">News Headline:</label>
+            <input type="text" id="headline" name="headline" required>
+
+            <label for="summary">News Summary:</label>
+            <textarea id="summary" name="summary" rows="4" required></textarea>
+
+            <label for="date">Date (YYYY-MM-DD):</label>
+            <input type="text" id="date" name="date" required>
+
+            <label for="close_price">Closing Price (for the selected date):</label>
+            <input type="text" id="close_price" name="close_price" required>
+
+            <input type="submit" value="Predict">
+            <small>*Prediction shows sentiment for the next date.</small></br>
+            <small>This is for learning purposes only and not a recommendation.</small>
+        </form>
+
+        {% if technical and sentiment %}
+            <h2>Prediction Results:</h2>
+            <p><strong>Technical Prediction:</strong> {{ technical }}</p>
+            <p><strong>Sentiment Prediction:</strong> {{ sentiment }}</p>
+            <p><strong>Explanation:</strong></p>
+            <p>{{ explanation }}</p>
+        {% endif %}
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; Stock Sentiment App | Parsh Verma </p>
+        </div>
+    </footer>
+</body>
+</html>
